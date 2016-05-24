@@ -25,6 +25,7 @@
       height: 50px;
       background:#333333;
       margin: auto;
+      background:#999999;
     }
 
     .fixed {
@@ -52,7 +53,7 @@
 <div class="freePlace"></div>
       <div id="block"></div>
 <div class="freePlace"></div>
-      <div id="block1" style="background:#999999;"></div>
+      <div id="block1"></div>
   <script>
     var blockElem = document.getElementById('block');
     var blockSourceBottom = blockElem.getBoundingClientRect().top + window.pageYOffset;
@@ -67,7 +68,7 @@
           blockElem.style.background = '#999999';
         }
         else {
-          blockElem.style.background = '#000';
+          blockElem.style.background = '#333333';
         }
       }
 
