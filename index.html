@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body,
+    html {
+      margin: 0px;
+      height: 2000px;
+    }
+
+    #block {
+      background: white;
+      margin-top: 200px;
+      width: 600px;
+      height: 50px;
+      background:#333333;
+      margin: auto;
+    }
+
+        #block1 {
+      background: white;
+      margin-top: 200px;
+      width: 600px;
+      height: 50px;
+      background:#333333;
+      margin: auto;
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 375px;
+
+    }
+    .freePlace{
+      height: 200px;
+      width: 100%;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+<div class="freePlace"></div>
+      <div id="block"></div>
+<div class="freePlace"></div>
+      <div id="block1" style="background:#999999;"></div>
+  <script>
+    var blockElem = document.getElementById('block');
+    var blockSourceBottom = blockElem.getBoundingClientRect().top + window.pageYOffset;
+    var blockElem1 = document.getElementById('block1');
+    var blockSourceBottom1 = blockElem1.getBoundingClientRect().top + window.pageYOffset;
+      window.onscroll = function() {
+      if (blockElem.classList.contains('fixed') && window.pageYOffset < blockSourceBottom) {
+        blockElem.classList.remove('fixed');
+      } else if (window.pageYOffset > blockSourceBottom) {
+        blockElem.classList.add('fixed');        
+        if(window.pageYOffset > blockSourceBottom1){
+          blockElem.style.background = '#999999';
+        }
+        else {
+          blockElem.style.background = '#000';
+        }
+      }
+
+    };
+  </script>
+</body>
+</html>
